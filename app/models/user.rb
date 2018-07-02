@@ -11,4 +11,5 @@ class User < ApplicationRecord
                        
      has_secure_password # The only requirement for has_secure_password to work its magic is for the corresponding model to have an attribute called password_digest
      #rails generate migration add_password_digest_to_users password_digest:string
+     validates :password, presence: true, length: { minimum: 6 }
 end
